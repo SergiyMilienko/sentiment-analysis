@@ -1,0 +1,95 @@
+.nav {
+    padding: 10px 0px;
+    background-color:#171718;
+    color: white;
+    border-bottom: 1px solid #262923;
+    position: absolute;
+    width: 100%;
+}
+
+.nav-row {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    column-gap: 10px;
+    row-gap: 20px;
+    flex-wrap: wrap;
+}
+
+.logo {
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: 700;
+    margin-right: auto;
+    color: white;
+}
+
+strong {
+    color: tomato;
+}
+
+.nav-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    column-gap: 15px;
+    font-size: 16px;
+    font-weight: 500;
+    list-style: none;
+}
+
+.nav-list__link {
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.1s ease-in;
+}
+
+.nav-list__link:hover {
+    opacity: 0.8;
+}
+
+.nav-list__item {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-self: center;
+    padding: 5px 0px;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+.drop {
+    width: 80px;
+}
+
+.nav-list__item:hover {
+    background-color:#202023;
+}
+
+.nav-list__item button {
+    margin-left: 5px;
+    width: 10px;
+    height: 10px;
+}
+
+.nav-list__item button img {
+    width: 10px;
+    height: 10px;
+}
+
+@media (max-width: 620px) {
+    .logo {
+        font-size: 12px;
+    }
+    .nav-list {
+        font-size: 10px;
+        column-gap: 5px;
+    }
+
+    .nav-list__item button {
+        margin-left: 0px;
+    }
+    
+}
