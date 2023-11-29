@@ -7,7 +7,8 @@ const Navbar = () => {
         <div className='container'>
             <div className="nav-row">
                 <a href="/" className="logo">
-                    ТонЧек
+                ТонЧек 
+                <img src='./img/logo.png'/>
                 </a>
                 <ul className="nav-list">
                     <li className='nav-list__item'>

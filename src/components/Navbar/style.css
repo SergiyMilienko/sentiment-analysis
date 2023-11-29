@@ -1,10 +1,8 @@
 .nav {
     padding: 10px 0px;
-    background-color:#171718;
     color: white;
-    border-bottom: 1px solid #262923;
-    position: absolute;
     width: 100%;
+    position: absolute;
 }
 
 .nav-row {
@@ -22,11 +20,18 @@
     font-weight: 700;
     margin-right: auto;
     color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-strong {
-    color: tomato;
+.logo img {
+    height: 50px;
+    width: 40px;
+    transform: scaleX(-1);
+    opacity: 0.9;
 }
+
 
 .nav-list {
     display: flex;
@@ -41,15 +46,13 @@ strong {
 .nav-list__link {
     color: white;
     text-decoration: none;
-    transition: opacity 0.1s ease-in;
 }
 
 .nav-list__link:hover {
-    opacity: 0.8;
+    color: #fee912;
 }
 
 .nav-list__item {
-    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -60,25 +63,6 @@ strong {
     padding: 5px 10px;
 }
 
-.drop {
-    width: 80px;
-}
-
-.nav-list__item:hover {
-    background-color:#202023;
-}
-
-.nav-list__item button {
-    margin-left: 5px;
-    width: 10px;
-    height: 10px;
-}
-
-.nav-list__item button img {
-    width: 10px;
-    height: 10px;
-}
-
 @media (max-width: 620px) {
     .logo {
         font-size: 12px;
@@ -87,9 +71,5 @@ strong {
         font-size: 10px;
         column-gap: 5px;
     }
-
-    .nav-list__item button {
-        margin-left: 0px;
-    }
-    
 }
+
