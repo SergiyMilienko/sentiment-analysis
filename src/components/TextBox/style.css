@@ -5,11 +5,6 @@
     height: 100vh;
     flex-direction: column;
   }
-  
-  p {
-    text-align: center;
-    font-size: 30px;
-  }
 
 form {
     display: flex;
@@ -19,15 +14,31 @@ form {
 }
 
   .input textarea {
-    width: 75%;
+    width: 100%;
     padding: 10px;
     font-size: 16px;
     border-radius: 5px;
     box-sizing: border-box;
     resize:none;
     background-color:#202023;
-    border: none;
+    border: 0.1px solid rgb(60, 60, 60);
     color: white;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #3498db #f0f0f0;
+  }
+
+  .input textarea::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  .input textarea::-webkit-scrollbar-thumb {
+    background-color: #ffffffc2;
+    border-radius: 5px;
+  }
+  
+  .input textarea::-webkit-scrollbar-thumb:hover {
+    background-color: #ffffff;
   }
   
   .input textarea:focus {
@@ -39,11 +50,11 @@ form {
   }
 
   button {
-  background-color: #ffffff;
-  color: rgb(0, 0, 0);
+  background-color: #202023;
+  color: rgb(255, 255, 255);
+  border: 0.1px solid rgb(60, 60, 60);
   padding: 10px 20px;
   font-size: 16px;
-  border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -52,5 +63,5 @@ form {
 }
 
 button:hover {
-  background-color: rgba(255, 235, 15, 0.9);
+  opacity: 0.8;
 }

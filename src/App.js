@@ -1,12 +1,12 @@
 import './App.css';
+import Main from './components/Main';
 import Navbar from './components/Navbar';
-import TextBox from './components/TextBox';
 
 function App() {
   return (
     <div className="App">
       <Navbar/>
-      <TextBox/>
+      <Main/>
     </div>
   );
 }

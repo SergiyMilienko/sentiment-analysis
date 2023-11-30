@@ -1,0 +1,21 @@
+.result p {
+    text-align: center;
+    font-size: 30px;
+  }
+
+.result strong.green {
+    color: green;
+}
+
+.result strong.red {
+    color: rgb(185, 0, 0);
+}
+
+.result img {
+    width: 30px;
+    margin-left: 5px;
+}
+
+.tonality {
+    display: flex;
+}
