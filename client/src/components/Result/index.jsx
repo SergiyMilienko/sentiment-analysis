@@ -6,7 +6,7 @@ const Result = () => {
     <div className='result'>
         <div className="tonality">
             <p>Тональність тексту: </p>
-            <img src="./img/happy.svg" alt="" />
+            <img src="/static/img/happy.svg" alt="" />
         </div>
         <p>Рівень суб'єктивності: <strong className='red'>24%</strong></p>
     </div>

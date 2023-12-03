@@ -8,7 +8,7 @@ const Navbar = () => {
             <div className="nav-row">
                 <a href="/" className="logo">
                 ТонЧек 
-                <img src='./img/logo.png'/>
+                <img src='/static/img/logo.png'/>
                 </a>
                 <ul className="nav-list">
                     <li className='nav-list__item'>
