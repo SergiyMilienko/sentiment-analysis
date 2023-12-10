@@ -4,3 +4,15 @@
     justify-content: space-around;
     align-items: center;
 }
+
+.result-container {
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.result-container.visible {
+    opacity: 1;
+    transition: opacity 2s ease-in-out;
+}

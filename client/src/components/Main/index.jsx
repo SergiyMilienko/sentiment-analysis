@@ -17,7 +17,12 @@ const Main = () => {
   return (
     <div className='main'>
       <TextBox onTonalityData={handleTonalityData} />
-        <Result tonality={tonality} subjectivityLevel={subjectivityLevel} />
+      {tonality !== null && (
+        <div className={`result-container ${tonality !== null ? 'visible' : ''}`}>
+          <Result tonality={tonality} subjectivityLevel={subjectivityLevel} />
+        </div>
+      )}
+      
     </div>
   );
 };
