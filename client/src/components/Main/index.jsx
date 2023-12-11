@@ -16,13 +16,12 @@ const Main = () => {
 
   return (
     <div className='main'>
-      <TextBox onTonalityData={handleTonalityData} />
-      {tonality !== null && (
-        <div className={`result-container ${tonality !== null ? 'visible' : ''}`}>
-          <Result tonality={tonality} subjectivityLevel={subjectivityLevel} />
-        </div>
-      )}
-      
+      <div className={`element textbox-container ${tonality !== null ? 'shift' : ''}`}>
+        <TextBox onTonalityData={handleTonalityData} />
+      </div>
+      <div className={`element result-container ${tonality !== null ? 'visible' : ''}`}>
+        <Result tonality={tonality} subjectivityLevel={subjectivityLevel} />
+      </div>
     </div>
   );
 };
