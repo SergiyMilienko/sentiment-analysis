@@ -32,7 +32,6 @@ const Result = ({ tonality, subjectivityLevel }) => {
       <div className="tonality">
         {renderTonalityContent()}
       </div>
-      <p>Рівень суб'єктивності: <strong className='red'>{subjectivityLevel}%</strong></p>
     </div>
   );
 };

@@ -1,11 +1,12 @@
 from flask import Flask, send_from_directory, request, jsonify
 import csv
-from flask_cors import CORS  #
+from flask_cors import CORS 
 
 app = Flask(__name__)
 CORS(app)
 
 tonality_dataset = {}
+negations = {'не', 'ні', 'без', 'немає'}
 
 with open('../tonality-data/tonSUM.2.0.csv', 'r', encoding='utf-8') as file:
     reader = csv.DictReader(file, delimiter=',')
@@ -42,30 +43,39 @@ def catch_all(path):
 def analyze_tonality():
     try:
         data = request.get_json()
-        user_text = data.get('text', '')
+        user_text = data.get('text', '').lower()
 
-        # Tokenize user_text into words (you may need a more sophisticated tokenizer)
         words = user_text.split()
-
-        # Calculate average tonality score for the entered text
         total_score = 0
         word_count = 0
+        negation = False
 
-        for word in words:
+        for i, word in enumerate(words):
             word = word.strip('.,?!')
+            
+            # Check if the word is a negation word and toggle the flag
+            if word in negations:
+                negation = not negation
+                continue
+            
             if word in tonality_dataset:
-                total_score += sum(tonality_dataset[word])
+                score = sum(tonality_dataset[word])
+                
+                # If there was a negation before this word, invert the score
+                if negation:
+                    score = -score
+                    negation = False  # Reset the negation flag after using it
+                
+                total_score += score
                 word_count += 1
 
         if word_count > 0:
             average_score = total_score / word_count
-            # Determine tonality based on average score (you can customize this logic)
             tonality = "positive" if average_score >= 0.5 else "negative"
         else:
             tonality = "unknown"
 
-        result = {"tonality": tonality}
-        return jsonify(result)
+        return jsonify({"tonality": tonality})
 
     except Exception as e:
         return jsonify({"error": str(e)})
